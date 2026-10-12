@@ -15,7 +15,7 @@ This lab implements the controls and roadmap from my BSides Edmonton 2025 talk, 
 3. [How the controls are organized](#how-the-controls-are-organized)
 4. [Control set](#control-set) — Govern · Identify · Protect · Detect · Respond · Recover · Assurance
 5. [Out of scope today](#out-of-scope-today)
-6. [Crosswalks](#crosswalks) — talk roadmap and talk controls → this lab
+6. [Crosswalks](#crosswalks) — talk roadmap, talk risk model and talk controls → this lab
 7. [Roadmap](#roadmap)
 8. [Frameworks referenced](#frameworks-referenced)
 
@@ -172,6 +172,19 @@ Named so the gaps are deliberate, not missed:
 | 5. Monitoring & response | Detect, Respond, Recover | Measure, Manage | DE, RS and RC controls · AS-01–AS-04 |
 | 6. Mature & scale | Govern | Govern, Manage | GV-04, RC-02 · out-of-scope items |
 
+### Talk risk model (four knowledge gaps) → this lab
+
+The talk framed agent risk using the four knowledge gaps from Deng et al., *"AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways"* ([arXiv:2406.02630](https://arxiv.org/abs/2406.02630)). This table shows where each gap is addressed — both in the controls on the reviewer and in what the reviewer checks in other agents.
+
+| Gap | Threats in the gap | Controls on the reviewer | Reviewer checks in other agents |
+|---|---|---|---|
+| **1. Unpredictability of multi-step user inputs** (threats on perception) | Prompt injection, jailbreak | PR-07, PR-08, PR-09, AS-01 | Tool poisoning |
+| **2. Complexity in internal executions** (threats on brain and action) | Backdoor, hallucination, misalignment, planning threats, tool-use threats | PR-04, PR-11, PR-12, PR-15, PR-19, ID-01, DE-03, GV-04, AS-02 | Excessive permissions, risky tool combinations, missing human approval |
+| **3. Variability of operational environments** (agent-to-environment threats) | Sandbox, development and testing, and computing-resource threats; physical-environment threats are not applicable to this software-only reviewer | PR-01, PR-16, PR-17, PR-18, PR-22, RS-02, RC-01 | — |
+| **4. Interactions with untrusted external entities** (agent-to-agent and memory threats) | Indirect prompt injection, long- and short-term memory threats; cooperative and competitive multi-agent threats | PR-05, PR-06, PR-08, PR-09, PR-13, PR-14, AS-01 · multi-agent threats: out of scope today | Tool poisoning, unvetted MCP servers, MCP authentication, unpinned tool definitions |
+
+Backdoor attacks are handled through supply chain controls (PR-19, ID-01) because the reviewer uses a provider's model rather than training its own.
+
 ### Talk controls → this lab
 
 | Traditional control (talk) | Lab ID | Reasoning-based control (talk) | Lab ID |
@@ -204,6 +217,7 @@ Named so the gaps are deliberate, not missed:
 - **OWASP MCP Security Cheat Sheet**
 - **MITRE ATLAS** — adversary techniques against AI systems, including agent-specific techniques
 - **CSA MAESTRO** — layered threat modeling for agentic AI (used in the threat model)
+- **Deng et al., "AI Agents Under Threat"** ([arXiv:2406.02630](https://arxiv.org/abs/2406.02630)) — four knowledge gaps in AI agent security (the talk's risk model)
 
 Mappings are at the level of risks and functions, not formal compliance claims. Framework IDs were checked against public sources in October 2026; check the current versions before relying on them.
 
