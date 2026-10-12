@@ -1,8 +1,8 @@
 """Smoke test: the package imports and exposes a version."""
 
-import triage_agent
+import agent_reviewer
 
 
 def test_package_has_version() -> None:
-    assert isinstance(triage_agent.__version__, str)
-    assert triage_agent.__version__
+    assert isinstance(agent_reviewer.__version__, str)
+    assert agent_reviewer.__version__

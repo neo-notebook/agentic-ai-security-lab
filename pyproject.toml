@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "triage-agent"
+name = "agent-reviewer"
 version = "0.0.1"
-description = "A DLP alert triage agent, built and secured (research lab, not production software)."
+description = "An AI security review agent, built and secured (research lab, not production software)."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []

@@ -2,7 +2,7 @@
 
 ## Scope
 
-This is a research and learning lab, not production software. It is intentionally used to test attacks against an AI agent (for example, prompt injection), so some test files contain adversarial text by design.
+This is a research and learning lab, not production software. It intentionally tests attacks against an AI agent (for example, tool poisoning and prompt injection), so some sample and test files contain adversarial text by design.
 
 ## Rules for this repository
 
